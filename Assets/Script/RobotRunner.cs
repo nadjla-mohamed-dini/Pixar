@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(RobotCollision))]
 public class RobotRunner2D : MonoBehaviour
 {
     public float speed = 5f;
@@ -27,6 +28,7 @@ public class RobotRunner2D : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
+            GetComponent<RobotCollision>().PLayJumpSound();
         }
     }
 
