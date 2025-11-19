@@ -1,4 +1,0 @@
-repository "Pixar/Pixar@9072285045727@cloud"
-  path "/"
-    br "/main"
-    co "/main"
