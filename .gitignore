@@ -104,3 +104,8 @@ InitTestScene*.unity*
 
 #JetBrains Rider setting files
 .idea/
+
+#Editor setting for linux
+Assets/Editor/*
+Assets/Editor.meta
+
