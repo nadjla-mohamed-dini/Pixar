@@ -80,6 +80,10 @@ crashlytics-build.properties
 # TestRunner generated files
 InitTestScene*.unity*
 
+# OS
+.DS_Store
+Thumbs.db
+
 # Addressables default ignores, before user customizations
 /ServerData
 /[Aa]ssets/StreamingAssets/aa*
