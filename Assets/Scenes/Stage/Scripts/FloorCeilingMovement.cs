@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class FloorCeilingMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
+    public float moveForce = 1.0f;
+
+    
+
+    void FixedUpdate()
     {
-        
+        //rb.AddForce(Vector2.left * moveForce, ForceMode2D.Impulse);
+        rb.linearVelocity = new  Vector2(-moveForce, 0);
     }
 }
