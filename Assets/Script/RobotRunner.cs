@@ -24,9 +24,10 @@ public class RobotRunner2D : MonoBehaviour
         rb.linearVelocity = new Vector2(speed * speedMultiplier, rb.linearVelocity.y);
 
         
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
             GetComponent<RobotCollision>().PLayJumpSound();
         }
