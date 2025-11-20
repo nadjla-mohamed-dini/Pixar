@@ -54,6 +54,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.slnx
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -97,3 +98,23 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# VScode setting files
+.vscode/
+
+#JetBrains Rider setting files
+.idea/
+
+#Editor setting for linux
+Assets/Editor/*
+Assets/Editor.meta
+
+#Editor crash recovery files
+Assets/_Recovery/*
+Assets/_Recovery.meta
+
+#PlasticSCM files
+.plastic/*
+
+#vscode config file
+.vsconfig
