@@ -11,11 +11,16 @@ public class RobotRunner2D : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = true;
 
+    public InputAction jump;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Dynamic; 
         rb.gravityScale = 2f; 
+        
+        //remove this comment to turn the game into jetpack joyride mode
+        //jump = InputSystem.actions.FindAction(("Jump"));
     }
 
     void Update()
@@ -31,6 +36,17 @@ public class RobotRunner2D : MonoBehaviour
             isGrounded = false;
             GetComponent<RobotCollision>().PLayJumpSound();
         }
+        
+        //remove this comment to turn the game into jetpack joyride mode
+        /*
+         *if (jump.IsPressed())
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            
+        }
+         *
+         * 
+         */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
