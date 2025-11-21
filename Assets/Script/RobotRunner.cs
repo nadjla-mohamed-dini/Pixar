@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +9,13 @@ public class RobotRunner2D : MonoBehaviour
     public float jumpForce = 7f;
     public float speedMultiplier = 1f;
 
+    public float speedIncrement = 0.2f; //vitesse win by collect data
+    public int MaxData = 5;
+    public float FreezeDuration = 2f;
+
     private Rigidbody2D rb;
     private bool isGrounded = true;
+    private bool isFrozen = false;
 
     public InputAction jump;
 
@@ -18,35 +24,35 @@ public class RobotRunner2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Dynamic; 
         rb.gravityScale = 2f; 
-        
+
         //remove this comment to turn the game into jetpack joyride mode
         //jump = InputSystem.actions.FindAction(("Jump"));
     }
 
     void Update()
     {
-        
+        if(isFrozen) return;
+        //calculate the speed en fonction des data
+        int dataCount = DataCollect.totalData;
+
+        if (dataCount <= MaxData)
+        {
+            speedMultiplier = 1f + (dataCount * speedIncrement);
+        }
+        else
+        {
+            StartCoroutine(FreezeRobot());
+        }
+
         rb.linearVelocity = new Vector2(speed * speedMultiplier, rb.linearVelocity.y);
 
         
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
-            //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
             GetComponent<RobotCollision>().PLayJumpSound();
         }
-        
-        //remove this comment to turn the game into jetpack joyride mode
-        /*
-         *if (jump.IsPressed())
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            
-        }
-         *
-         * 
-         */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,5 +61,15 @@ public class RobotRunner2D : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+    IEnumerator FreezeRobot()
+    {
+        isFrozen = true;
+        rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(FreezeDuration);
+        isFrozen = false;
+
+        DataCollect.totalData = 0;
+        speedMultiplier = 1f;
     }
 }
