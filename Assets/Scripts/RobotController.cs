@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class maps : MonoBehaviour
+public class RobotController : MonoBehaviour
 
-{
+{   
+    public GameManager gameManager;
+
     public float speed = 5f;
     public float jumpForce = 7f;
     public float speedMultiplier = 1f;
@@ -21,8 +23,7 @@ public class maps : MonoBehaviour
     void Update()
     {
         
-        rb.linearVelocity = new Vector2(speed * speedMultiplier, rb.linearVelocity.y);
-
+        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         
         if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
@@ -39,4 +40,25 @@ public class maps : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+{
+    // Dès qu'on quitte le "Ground"
+    if (collision.collider.CompareTag("Ground"))
+    {
+        if (rb.linearVelocity.y > 0.1f) 
+        {
+            isGrounded = false;
+        }
+    }
+}
+
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Water"))
+    {
+    GameManager.Instance.GameOver("Le robot à toucher l'eau !");
+    //PlayLooseSound(); 
+    }
+}
 }

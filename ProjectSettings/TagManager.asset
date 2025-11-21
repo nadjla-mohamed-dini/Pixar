@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Perso
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 83204595
     locked: 0
   m_RenderingLayers:
   - Default
