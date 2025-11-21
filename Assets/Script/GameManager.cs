@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -20,10 +21,19 @@ public class GameManager : MonoBehaviour
     private Rigidbody2D robotRb;
     private Rigidbody2D virusRb;
 
+    public bool getGameOver()
+    {
+        return isGameOver;
+        
+    }
+
     void Start()
     {
         robotRb = robot.GetComponent<Rigidbody2D>();
         virusRb = virus.GetComponent<Rigidbody2D>();
+        isGameOver = false;
+        gameOverPanel.SetActive(false);
+        victoryPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,11 +87,13 @@ public class GameManager : MonoBehaviour
 
     public void ReplayGame()
     {
+        Debug.Log("replay button clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
     {
+        Debug.Log("Quit button clicked");
         Application.Quit();
         Debug.Log("Quitter le jeu"); // utile pour tester dans l’éditeur
     }

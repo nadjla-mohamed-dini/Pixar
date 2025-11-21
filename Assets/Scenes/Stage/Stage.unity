@@ -235,6 +235,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1637371295665109464, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1683795864}
+    - target: {fileID: 1637371295665109464, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 2321012466488425442, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_Color.a
       value: 0.4745098
@@ -291,6 +299,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4238896944351837585, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1683795864}
+    - target: {fileID: 4238896944351837585, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReplayGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4259523559606910011, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_SizeDelta.x
       value: 232.31
@@ -339,6 +355,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 127.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6133788942088440513, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1683795864}
+    - target: {fileID: 6133788942088440513, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReplayGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6776046957825660166, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -346,6 +370,22 @@ PrefabInstance:
     - target: {fileID: 6776046957825660166, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_RenderMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6948263599045869119, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1683795864}
+    - target: {fileID: 6948263599045869119, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220101505603460641, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220101505603460641, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7331263021295091938, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_Layer
@@ -364,8 +404,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7937065076027949661, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 283.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937065076027949661, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 404
+      value: 362.33
       objectReference: {fileID: 0}
     - target: {fileID: 7937065076027949661, guid: 72c9a4bd76f0778319f5ce4d60d721bb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -842,6 +886,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eb1da2a89a6ed807aacc49655e59646, type: 3}
+--- !u!114 &1683795864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8759788947737931939, guid: 3eb1da2a89a6ed807aacc49655e59646, type: 3}
+  m_PrefabInstance: {fileID: 1683795863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da194eeb4b1762429e3f1e0ef023621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1001 &1769027147
 PrefabInstance:
   m_ObjectHideFlags: 0
