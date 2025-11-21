@@ -12,8 +12,13 @@ public class MenuController : MonoBehaviour
 
     public void Continue()
     {
-        string lastScene = PlayerPrefs.GetString("LastScene", "MainMenu");
-        SceneManager.LoadScene(lastScene);
+        //string lastScene = PlayerPrefs.GetString("LastScene", "MainMenu");
+        SceneManager.LoadScene(1);
+    }
+
+    public void play()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()

@@ -14,10 +14,10 @@ public class RobotRunner2D : MonoBehaviour
     public float FreezeDuration = 2f;
 
     private Rigidbody2D rb;
-    private bool isGrounded = true;
+    //private bool isGrounded = true;
     private bool isFrozen = false;
 
-    public InputAction jump;
+    //public InputAction jump;
 
     void Start()
     {
@@ -47,14 +47,17 @@ public class RobotRunner2D : MonoBehaviour
         rb.linearVelocity = new Vector2(speed * speedMultiplier, rb.linearVelocity.y);
 
         
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            isGrounded = false;
-            GetComponent<RobotCollision>().PLayJumpSound();
+            //if (jump.isPressed())
+            //{
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                //isGrounded = false;
+                GetComponent<RobotCollision>().PLayJumpSound();
+            //}
         }
     }
-
+/*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
@@ -62,6 +65,7 @@ public class RobotRunner2D : MonoBehaviour
             isGrounded = true;
         }
     }
+    */
     IEnumerator FreezeRobot()
     {
         isFrozen = true;

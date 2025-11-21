@@ -16,7 +16,7 @@ public class DataCounter : MonoBehaviour
     {
         if(counterText.text != null)
         {
-            counterText.text = DataCollect.totalData.ToString();
+            counterText.text = DataCollect.totalData.ToString()+"/5";
         }
     }
 }

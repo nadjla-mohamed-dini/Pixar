@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver) return;
 
-        currentDistance = robot.position.x;
+        currentDistance = robot.position.x+6;
         distanceText.text = "Distance: " + Mathf.FloorToInt(currentDistance) + " m";
 
         if (currentDistance >= objectifDistance)

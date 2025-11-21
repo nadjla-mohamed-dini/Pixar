@@ -22,12 +22,14 @@ public class VirusChase2D : MonoBehaviour
 
     void Update()
     {
-        if (robot == null || robotRunner == null)  return;
+        if (robot == null )  return;
         float directionX = Mathf.Sign(robot.position.x - transform.position.x);
 
-        //speed of the robot 
+        //speed of the robot
+        /*
         float robotSpeed = robotRunner.speed * robotRunner.speedMultiplier;
         float factor = 0.8f;
+        
         if (DataCollect.totalData >= 3 && DataCollect.totalData <= 5)
         {
             factor = 1f;
@@ -36,7 +38,9 @@ public class VirusChase2D : MonoBehaviour
         {
             factor = 1f; // keep 100 speed on the freeze
         }
+        
         float virusSpeed = BaseSpeed + robotSpeed * factor;
-        rb.linearVelocity = new Vector2(directionX * virusSpeed * speedMultiplier, 0);
+        */
+        rb.linearVelocity = new Vector2(directionX * BaseSpeed * speedMultiplier, 0);
     }
 }
